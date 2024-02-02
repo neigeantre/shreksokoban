@@ -1,2 +1,2 @@
-# shreksokoban
-A shrek-themed sokoban game
+# Sokoban
+A sokoban game
