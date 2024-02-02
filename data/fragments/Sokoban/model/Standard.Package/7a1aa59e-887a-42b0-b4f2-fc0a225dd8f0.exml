@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="entity" version="4">
+  <OBJECT>
+    <ID name="entity" mc="Standard.Package" uid="7a1aa59e-887a-42b0-b4f2-fc0a225dd8f0"/>
+    <PID name="sokoban" mc="Standard.Package" uid="4b3075c3-695a-4fa0-b450-1706f430f9b1"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[entity]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Position" mc="Standard.Class" uid="cf75c6ab-9e29-46d7-9507-29e1dac0aea6"/>
+        <COMPID name="Warehouse" mc="Standard.Class" uid="c8e0e928-61bf-4b53-8d1e-88b44e44d04a"/>
+        <COMPID name="Square" mc="Standard.Class" uid="25602798-ec4d-4bed-b6da-6e47876adf00"/>
+        <COMPID name="Wall" mc="Standard.Class" uid="7e4794ac-4e29-491c-bce7-44c2e36a2a6b"/>
+        <COMPID name="Floor" mc="Standard.Class" uid="458c24cf-feeb-42b5-9254-9e1e0d05e4b4"/>
+        <COMPID name="Moveable" mc="Standard.Class" uid="2db2a328-bb2e-45da-a016-2fb09771ef3e"/>
+        <COMPID name="Stone" mc="Standard.Class" uid="ea2e33f9-dec1-48ee-bea1-93eccafc46c7"/>
+        <COMPID name="Player" mc="Standard.Class" uid="a6fd0137-8e93-43cc-902c-d5e1b6eefc65"/>
+        <OBJECT>
+          <ID name="Direction" mc="Standard.Enumeration" uid="f78872e3-90c1-4d52-9bb5-bf9fe48b53bf"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Direction]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="UP" mc="Standard.EnumerationLiteral" uid="9f258fd0-9eac-4cd0-ab81-044e898e2d95"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[UP]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="DOWN" mc="Standard.EnumerationLiteral" uid="c0553315-d7a0-4d09-8b5a-a99b28d11916"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[DOWN]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="LEFT" mc="Standard.EnumerationLiteral" uid="4f7e1648-dc26-4ef2-af7f-e612189fd7a0"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[LEFT]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="RIGHT" mc="Standard.EnumerationLiteral" uid="61810baf-9e1a-4077-9a12-212ac9f5976e"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[RIGHT]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="d76372fb-e8e7-4c32-886e-35de73b36f61"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[<Enter note text here>]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Product">
+        <COMPID name="Entity diagram" mc="Standard.ClassDiagram" uid="7aa47355-5836-49d4-85e2-2f5720bea3a5"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
