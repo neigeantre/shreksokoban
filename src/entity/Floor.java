@@ -9,5 +9,10 @@ public class Floor extends Square {
 
     @objid ("e884bd15-b489-41f5-8f09-9ee67ad46202")
     private Moveable moveable;
+    
+    @Override
+    String getType() {
+    	return "Floor";
+    }
 
 }
