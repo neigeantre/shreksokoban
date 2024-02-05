@@ -6,5 +6,7 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 public abstract class Moveable {
     @objid ("b39ec76f-4022-4113-b29f-6e5ccc978144")
     private Floor floor;
+    
+    abstract String getType();
 
 }
