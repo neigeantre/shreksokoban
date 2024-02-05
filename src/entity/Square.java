@@ -9,5 +9,6 @@ public abstract class Square {
 
     @objid ("dd71c13a-59c1-4d7d-bf5e-47ee17577a54")
     private Position position;
-
+    
+    abstract String getType();
 }
