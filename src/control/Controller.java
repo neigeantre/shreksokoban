@@ -1,6 +1,8 @@
 package control;
 
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
+
+import java.util.ArrayList;
 import java.util.HashMap; 
 import entity.Direction;
 import entity.Player;
@@ -15,11 +17,8 @@ public class Controller {
 
     @objid ("0d8b8391-47b4-426c-a8d8-2d8af07dd71a")
     private Player player;
-    
-    private HashMap<Position, Square> gamestate = new HashMap<Position, Square>();  
-    
+        
     public Controller(Player player, Warehouse warehouse) {
-    	this.gamestate = gamestate;
     	this.player = player;
     	this.warehouse = warehouse;
     }
@@ -29,12 +28,37 @@ public class Controller {
     	this.player.move(direction);
     }
     
-    public HashMap<Position, Square> getBoard() {
-    	for (int i =0; i < warehouse.getSquares().size();i++) {
-    		
-    		gamestate.put(warehouse.getPositions().get(i), warehouse.getSquares().get(i));
+    public Position getPos(int i, int j) {
+    	ArrayList<Position> positions = warehouse.getPositions();
+		for (int k =0; k < positions.size();k++) {
+			Position pos = positions.get(k);
+			if (pos.getRow()==i && pos.getColumn()==j) {
+				return pos;
+			}
+		
+		}
+    	
+    }
+    
+    public ArrayList<ArrayList<String>> getBoard() {
+    	
+    	int BOARD_HEIGHT = 10;
+    	int BOARD_WIDTH = 10;
+    	
+    	ArrayList<ArrayList<String>> board = new ArrayList<>();
+		for (int i =0; i< BOARD_HEIGHT; i++) {
+			ArrayList<String> subarray = new ArrayList<String>(BOARD_WIDTH);
+			for (int j=0; j < BOARD_WIDTH; j++) {
+				subarray.add(j,getPos(i,j).getSquare().getType());
+				}
+			
+			board.add(subarray);
 
-    	}
-    	return gamestate;
+		}
+    	
+
+    	
+    	return board;
     }
 }
+
