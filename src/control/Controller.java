@@ -60,5 +60,25 @@ public class Controller {
     	
     	return board;
     }
+    
+    public Direction translateAction(String useraction) {
+    	switch(useraction){
+		case "U":
+			action(Direction.UP);
+			break;
+		case "D":
+			action(Direction.DOWN);
+			break;
+		case "L":
+			action(Direction.LEFT);
+			break;
+		case "R":
+			action(Direction.RIGHT);
+			break;
+		
+    	default:
+    		break;
+    	}
+    }
 }
 
