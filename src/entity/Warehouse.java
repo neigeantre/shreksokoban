@@ -11,5 +11,36 @@ public class Warehouse {
 
     @objid ("1fe578cf-6887-44d2-9332-dc8dcb8978ab")
     private List<Square> squares = new ArrayList<Square> ();
+    
+    public Square getNeighbour(Square square, Direction direction) {
+    	Position position = square.getPosition();
+    	int rowDifference = 0;
+    	int columnDifference = 0;
+    	switch (direction) {
+    		case LEFT:
+    			columnDifference = -1;
+    			break;
+    		case RIGHT:
+    			columnDifference = 1;
+    			break;
+    		case UP:
+    			rowDifference = -1;
+    			break;
+    		case DOWN:
+    			rowDifference = 1;
+    			break;
+    	}
+    	for (Position otherPosition : positions) {
+    		if (otherPosition.getColumn() == position.getColumn() + columnDifference && 
+    				otherPosition.getRow() == position.getRow() + rowDifference) {
+    			return otherPosition.getSquare();
+    		}
+    	}
+    	return null;
+    }
+    
+    public void allocate(Moveable m, Floor floor) {
+    	floor.setMoveable(m);
+    }
 
 }
