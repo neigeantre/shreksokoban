@@ -56,12 +56,24 @@ public class TextView {
 						break;
 					case "Stone":
 						System.out.println("$");
+						break;
+					case "Goal":
+						System.out.println(".");
+						break;
+						
+				
 
 				}
 				
 			}
+			System.out.println("\n");
 		}
 		
 	}
+	public static void clearScreen() {  
+	    System.out.print("\033[H\033[2J");  
+	    System.out.flush();  
+	}  
+	
 
 }
