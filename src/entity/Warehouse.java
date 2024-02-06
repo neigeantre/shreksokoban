@@ -10,7 +10,7 @@ public class Warehouse {
     private ArrayList<Position> positions = new ArrayList<Position> ();
 
     @objid ("1fe578cf-6887-44d2-9332-dc8dcb8978ab")
-    private List<Square> squares = new ArrayList<Square> ();
+    private ArrayList<Square> squares = new ArrayList<Square> ();
     
     public Square getNeighbour(Square square, Direction direction) {
     	Position position = square.getPosition();

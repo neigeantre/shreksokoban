@@ -36,14 +36,6 @@ public class Position {
 
     @objid ("559b7e66-8c12-418e-aaf2-a1d5a38ab39a")
     private Square square;
-    
-    int getRow() {
-    	return this.row;
-    }
-    
-    int getColumn() {
-    	return this.column;
-    }
 
 	public Square getSquare() {
 		return square;
