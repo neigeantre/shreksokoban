@@ -43,12 +43,12 @@ public class Controller {
 		for (int i =0; i< BOARD_HEIGHT; i++) {
 			ArrayList<String> subarray = new ArrayList<String>();
 			for (int j=0; j < BOARD_WIDTH; j++) {
-				if (getPos(i,j) != null)
+				if (getPos(i,j) != null) {
 					if (getPos(i,j).getSquare() != null) {
 						subarray.add(j,getPos(i,j).getSquare().getView());
 					}
 				}
-			
+			}
 			board.add(subarray);
 		}
     	return board;

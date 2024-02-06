@@ -68,7 +68,7 @@ public class GenerateLevel {
 	          case '@': {
 	        	  Floor floor = new Floor(warehouse, pos, false);
 	        	  squares.add(floor);        	  
-	        	  Player player = new Player(floor);
+	        	  player = new Player(floor);
 	      		  floor.setMoveable(player);
 	      		  pos.setSquare(floor);
 	        	  squares.add(floor);
