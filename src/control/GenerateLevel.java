@@ -42,13 +42,14 @@ public class GenerateLevel {
 	        int j =0;
 	        while (fis.available() > 0) {
 	          current = (char) fis.read();
-	          i++;
 	          Position pos = new Position(j,i);
+	          i++;
 	          positions.add(pos);
 	          
 	          switch(current) {
 	          case '\n':
 	        	  j++;
+	        	  i=0;
 	        	  break;
 	          case '#':
 	        	  Wall wall = new Wall(warehouse, pos);
@@ -87,7 +88,6 @@ public class GenerateLevel {
 	          }
 	          }
 	          
-	          System.out.print(current);
 	        }
 	        warehouse.setSquares(squares);
 			for (Square s:squares) {
