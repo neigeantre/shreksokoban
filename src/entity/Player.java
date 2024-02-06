@@ -20,4 +20,9 @@ public class Player extends Moveable {
     	
     }
 
+	
+    @Override
+    String getType() {
+    	return "Player";
+    }
 }

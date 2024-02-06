@@ -15,5 +15,10 @@ public class Wall extends Square {
 	
 	public boolean isCompletelyFree() {
 		return false;
+	
+	@Override
+	String getType() {
+		
+		return "Wall";
 	}
 }

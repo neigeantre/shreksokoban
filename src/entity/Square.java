@@ -22,5 +22,6 @@ public abstract class Square {
     public abstract boolean isPartiallyFree(Direction direction);
     
     public abstract boolean isCompletelyFree();
-
+    
+    abstract String getType();
 }

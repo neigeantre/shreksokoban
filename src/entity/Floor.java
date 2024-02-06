@@ -14,6 +14,16 @@ public class Floor extends Square {
 
     @objid ("e884bd15-b489-41f5-8f09-9ee67ad46202")
     private Moveable moveable;
+    
+    @Override
+    String getType() {
+    	return moveable.getType();
+    }
+    
+    boolean checkIfGoal() {
+    	return isGoal;
+    }
+    
 
     @objid ("a5890ffa-c71a-4125-a810-056902cea10b")
     public boolean isNeighbourFree(final Direction direction) {
