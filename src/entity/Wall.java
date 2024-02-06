@@ -18,7 +18,7 @@ public class Wall extends Square {
 	}
 	
 	@Override
-	String getType() {
+	public String getType() {
 		
 		return "Wall";
 	}
