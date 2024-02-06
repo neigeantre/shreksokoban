@@ -17,6 +17,12 @@ public class Floor extends Square {
     
     @Override
     String getType() {
+    	if (isGoal) {
+    		return "Goal";
+    	}
+    	else if (moveable==null) {
+    		return null;
+    	}
     	return moveable.getType();
     }
     
