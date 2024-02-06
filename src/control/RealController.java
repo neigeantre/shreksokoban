@@ -9,7 +9,7 @@ public class RealController implements IController {
 	private Player player;
 	
     public RealController() {
-    	warehouse = Warehouse.generateFromFile("/home/arthur/gloo/sokoban/src/control/schemeLevel.txt");
+    	warehouse = Warehouse.generateFromFile("/home/arthur/gloo/sokoban/src/control/levels/level1.txt");
     	player = warehouse.getPlayer();
     }
 

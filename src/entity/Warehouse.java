@@ -175,7 +175,7 @@ public class Warehouse {
 				nbLines = pos.getRow();
 			}
 		}
-		return nbLines;
+		return nbLines+1;
 	}
 	
 	public int getNbColumns() {
@@ -185,7 +185,7 @@ public class Warehouse {
 				nbColumns = pos.getColumn();
 			}
 		}
-		return nbColumns;
+		return nbColumns+1;
 	}
 	
 	public Square getSquare(int ligne, int colonne) {
