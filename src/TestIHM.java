@@ -2,7 +2,7 @@ import javax.swing.SwingUtilities;
 
 import control.MockController;
 import gui.SokobanWindow;
-
+import control.RealController;
 /**
  * Application de test de l'IHM du jeu Sokoban en utilisant le controleur bouchon
  * 
@@ -14,7 +14,7 @@ public class TestIHM implements Runnable {
 
 	@Override
 	public void run() {
-    	new SokobanWindow(new MockController());
+    	new SokobanWindow(new RealController());
 	}
 
     public static void main(String[] args) {

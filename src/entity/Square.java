@@ -1,4 +1,5 @@
 package entity;
+import control.CaseContent;
 
 
 public abstract class Square {
@@ -24,4 +25,8 @@ public abstract class Square {
 	public void setWarehouse(Warehouse warehouse) {
 		this.warehouse = warehouse;
 	}
+	
+	public abstract Player getPlayer();
+	
+	public abstract CaseContent evaluateCaseContent();
 }

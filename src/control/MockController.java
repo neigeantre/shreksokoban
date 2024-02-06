@@ -10,7 +10,6 @@ import entity.Direction;
  *
  */
 public class MockController implements IController {
-
 	@Override
 	public void action(Direction direction) {
 		System.out.println("Direction : " + direction.name());

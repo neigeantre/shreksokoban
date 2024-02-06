@@ -1,5 +1,6 @@
 package entity;
 
+import control.CaseContent;
 
 public class Floor extends Square {
     public Floor(Warehouse warehouse, Position position) {
@@ -85,4 +86,33 @@ public class Floor extends Square {
     	}
     	return true;
     }
+    
+    public Player getPlayer() {
+    	if (moveable!=null && moveable.getClass()==Player.class) {
+    		return (Player) moveable;
+    	}
+    	return null;
+    }
+
+	@Override
+	public CaseContent evaluateCaseContent() {
+		// TODO Auto-generated method stub
+		if (isGoal) {
+			if (moveable==null) {
+				return CaseContent.GOAL;
+			} else if (moveable.getClass()==Player.class) {
+				return CaseContent.MAN;
+			} else {
+				return CaseContent.BOX_ON_GOAL;
+			}
+		} else {
+			if (moveable==null) {
+				return CaseContent.EMPTY_FLOOR;
+			} else if (moveable.getClass()==Player.class) {
+				return CaseContent.MAN;
+			} else {
+				return CaseContent.BOX;
+			}
+		}
+	}
 }
