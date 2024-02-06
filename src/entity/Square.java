@@ -23,5 +23,5 @@ public abstract class Square {
     
     public abstract boolean isCompletelyFree();
     
-    abstract String getType();
+    public abstract String getType();
 }
