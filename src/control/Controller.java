@@ -41,14 +41,17 @@ public class Controller {
     
     public ArrayList<ArrayList<String>> getBoard() {
     	
-    	int BOARD_HEIGHT = 3;
-    	int BOARD_WIDTH = 5;
+    	int BOARD_HEIGHT = 11;
+    	int BOARD_WIDTH = 19;
     	
     	ArrayList<ArrayList<String>> board = new ArrayList<>();
 		for (int i =0; i< BOARD_HEIGHT; i++) {
-			ArrayList<String> subarray = new ArrayList<String>(BOARD_WIDTH);
+			ArrayList<String> subarray = new ArrayList<String>();
 			for (int j=0; j < BOARD_WIDTH; j++) {
-				subarray.add(j,getPos(i,j).getSquare().getView());
+				if (getPos(i,j) != null)
+					if (getPos(i,j).getSquare() != null) {
+						subarray.add(j,getPos(i,j).getSquare().getView());
+					}
 				}
 			
 			board.add(subarray);

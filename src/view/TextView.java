@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import entity.GenerateTest;
+import control.GenerateLevel;
 
 import control.Controller;
 
@@ -12,8 +13,8 @@ public class TextView {
 	
 	private static Controller control;
 	private static ArrayList<ArrayList<String>> board;
-	private static int BOARD_HEIGHT = 3;
-	private static int BOARD_WIDTH = 5;
+	private static int BOARD_HEIGHT = 11;
+	private static int BOARD_WIDTH = 19;
 	
 
 	
@@ -35,7 +36,7 @@ public class TextView {
 		board = control.getBoard();	
 		//
 		for (int i=0;i<BOARD_HEIGHT; i++) {
-			for (int j=0;j < BOARD_WIDTH; j++) {
+			for (int j=0;j < board.get(i).size(); j++) {
 				System.out.print(board.get(i).get(j));
 			}
 			System.out.print("\n");
@@ -49,8 +50,11 @@ public class TextView {
 	
 	public static void main(String[] args) {
 		
-		GenerateTest.generate();
-		control = GenerateTest.generateController();
+		//GenerateTest.generate();
+		//control = GenerateTest.generateController();
+		
+		GenerateLevel.readFile("/home/arthur/gloo/sokoban/src/control/schemeLevel.txt");
+		control = GenerateLevel.generateController();
 		System.out.println(control.getPos(2, 2));
 		System.out.println(control.getBoard());
 		

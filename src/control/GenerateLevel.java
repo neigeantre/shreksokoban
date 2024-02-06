@@ -1,9 +1,17 @@
-package gloo.projet;
+package control;
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.io.FileInputStream; // Import the Scanner class to read text files
 import java.io.IOException;
 import java.util.ArrayList;
+
+import entity.Floor;
+import entity.Player;
+import entity.Position;
+import entity.Square;
+import entity.Stone;
+import entity.Wall;
+import entity.Warehouse;
 
 
 public class GenerateLevel {
@@ -35,8 +43,8 @@ public class GenerateLevel {
 	        while (fis.available() > 0) {
 	          current = (char) fis.read();
 	          i++;
-	          Position pos = addPosition(positions,i,j);
-	          
+	          Position pos = new Position(j,i);
+	          positions.add(pos);
 	          
 	          switch(current) {
 	          case '\n':
@@ -44,36 +52,39 @@ public class GenerateLevel {
 	        	  break;
 	          case '#':
 	        	  Wall wall = new Wall(warehouse, pos);
-	        	  position.setSquare(wall);
+	        	  pos.setSquare(wall);
 	        	  squares.add(wall);
 	        	  break;
-	          case '$':
+	          case '$': {
 	        	  Floor floor = new Floor(warehouse, pos, false);
 	        	  squares.add(floor);
 	        	  Stone stone = new Stone(floor);   			
 	        	  floor.setMoveable(stone);
-	        	  position.setSquare(floor);
+	        	  pos.setSquare(floor);
 	        	  squares.add(floor);
 	        	  break;
-	          case '@':
+	          }
+	          case '@': {
 	        	  Floor floor = new Floor(warehouse, pos, false);
 	        	  squares.add(floor);        	  
 	        	  Player player = new Player(floor);
 	      		  floor.setMoveable(player);
-	      		  position.setSquare(floor);
+	      		  pos.setSquare(floor);
 	        	  squares.add(floor);
 	        	  break;
-	          case '.':
+	          }
+	          case '.': {
 	        	  Floor floor = new Floor(warehouse, pos, true);
-	        	  position.setSquare(floor);
+	        	  pos.setSquare(floor);
 	        	  squares.add(floor);
 	        	  break;
-	          case ' ':
+	          }
+	          case ' ': {
 	        	  Floor floor = new Floor(warehouse, pos, false);
-	        	  position.setSquare(floor);
+	        	  pos.setSquare(floor);
 	        	  squares.add(floor);
 	        	  break;
-	          
+	          }
 	          }
 	          
 	          System.out.print(current);
@@ -88,6 +99,6 @@ public class GenerateLevel {
 	  }
   
   
-  
+	
   
 }
