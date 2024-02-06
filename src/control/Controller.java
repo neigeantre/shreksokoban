@@ -15,14 +15,7 @@ public class Controller {
 
     @objid ("d194fe2c-4505-48ec-81c3-3dfe828c0116")
     public void action(final Direction direction) {
-    }
-
-    @objid ("cb8b4936-a05b-4ca9-8980-b0734cfe3789")
-    public void action (LEFT)() {
-    }
-
-    @objid ("4e88075a-03f0-4ef1-a56d-79772818842a")
-    public void test() {
+    	this.player.move(direction);
     }
 
 }

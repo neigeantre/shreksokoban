@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metamodel format="1" MetamodelDescriptor.format="1">
-  <fragment name="Infrastructure" version="2.1.03" provider="Modeliosoft" providerVersion="3.8.01">
+  <fragment name="Infrastructure" version="2.1.04" provider="Modeliosoft" providerVersion="5.4.00">
     <dependencies>
       <metamodel_fragment name="modelio.kernel" version="1.0.00"/>
     </dependencies>
     <metaclasses>
-      <metaclass name="AbstractDiagram" version="0.0.9054" abstract="true">
+      <metaclass name="AbstractDiagram" version="0.0.9055" abstract="true">
         <parent fragment="Infrastructure" name="ModelElement"/>
         <attribute name="UiDataVersion" type="java.lang.Integer"></attribute>
         <attribute name="UiData" type="java.lang.String"></attribute>
         <attribute name="PreviewData" type="java.lang.String"></attribute>
+        <attribute name="JsStructure" type="java.lang.String"></attribute>
         <dependency name="Represented" min="0" max="-1" navigate="true" weakReference="true">
           <target fragment="Infrastructure" name="Element"/>
           <opposite name="DiagramElement"/>
