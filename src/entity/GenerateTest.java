@@ -53,7 +53,7 @@ public class GenerateTest {
 		Wall r1c0 = new Wall(warehouse, pos_r1c0);
 		Floor r1c1 = new Floor(warehouse, pos_r1c1);
 		Floor r1c2 = new Floor(warehouse, pos_r1c2);
-		Floor r1c3 = new Floor(warehouse, pos_r1c3);
+		Floor r1c3 = new Floor(warehouse, pos_r1c3, true);
 		Wall r1c4 = new Wall(warehouse, pos_r1c4);
 		Wall r2c0 = new Wall(warehouse, pos_r2c0);
 		Wall r2c1 = new Wall(warehouse, pos_r2c1);

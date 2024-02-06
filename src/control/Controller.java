@@ -48,16 +48,16 @@ public class Controller {
 		for (int i =0; i< BOARD_HEIGHT; i++) {
 			ArrayList<String> subarray = new ArrayList<String>(BOARD_WIDTH);
 			for (int j=0; j < BOARD_WIDTH; j++) {
-				subarray.add(j,getPos(i,j).getSquare().getType());
+				subarray.add(j,getPos(i,j).getSquare().getView());
 				}
 			
 			board.add(subarray);
-
 		}
-    	
-
-    	
     	return board;
+    }
+    
+    public boolean isFinished() {
+    	return warehouse.isComplete();
     }
     
     public void translateAction(String useraction) {

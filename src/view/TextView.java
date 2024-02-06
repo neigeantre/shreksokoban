@@ -36,25 +36,7 @@ public class TextView {
 		//
 		for (int i=0;i<BOARD_HEIGHT; i++) {
 			for (int j=0;j < BOARD_WIDTH; j++) {
-				switch (board.get(i).get(j)) {
-					case "Wall":
-						System.out.print("#");
-						break;
-					case "Player":
-						System.out.print("@");
-						break;
-					case "Stone":
-						System.out.print("$");
-						break;
-					case "Goal":
-						System.out.print(".");
-						break;
-				default:
-					System.out.print(" ");
-					break;
-
-				}
-				
+				System.out.print(board.get(i).get(j));
 			}
 			System.out.print("\n");
 		}
@@ -66,7 +48,6 @@ public class TextView {
 	}  
 	
 	public static void main(String[] args) {
-		boolean gameon = true;
 		
 		GenerateTest.generate();
 		control = GenerateTest.generateController();
@@ -75,13 +56,21 @@ public class TextView {
 		
 		Scanner myScanner = new Scanner(System.in);
 		
-		while (gameon) {
-			System.out.println("First move");
-			TextView.showBoard();
+		clearScreen();
+		System.out.println("\n\n");
+		TextView.showBoard();
+		
+		while (!control.isFinished()) {
 			String move = myScanner.nextLine();
-				
 			control.translateAction(move);
 			
+			clearScreen();
+			System.out.println("\n\n");
+			TextView.showBoard();
+			
+			if (control.isFinished()) {
+				System.out.println("Vous avez gagné !");
+			}
 		}
 		
 		myScanner.close();

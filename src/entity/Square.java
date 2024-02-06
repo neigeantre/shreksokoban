@@ -23,7 +23,7 @@ public abstract class Square {
     
     public abstract boolean isCompletelyFree();
     
-    public abstract String getType();
+    public abstract String getView();
 
 	public void setWarehouse(Warehouse warehouse) {
 		this.warehouse = warehouse;

@@ -60,4 +60,13 @@ public class Warehouse {
 	public void setSquares(ArrayList<Square> squares) {
 		this.squares = squares;
 	}
+	
+	public boolean isComplete() {
+		for (Square square: squares) {
+			if (square.getClass() == Floor.class && !((Floor) square).isValid()) {
+				return false;
+			}
+ 		}
+		return true;
+	}
 }

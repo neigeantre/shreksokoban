@@ -13,10 +13,5 @@ public class Stone extends Moveable {
 	public void setFloor(Floor floor) {
 		this.floor = floor;
 	}
-	
-    @Override
-    String getType() {
-    	return "Stone";
-    }
 
 }

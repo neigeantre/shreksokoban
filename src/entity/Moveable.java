@@ -14,8 +14,5 @@ public abstract class Moveable {
 	public void setFloor(Floor floor) {
 		this.floor = floor;
 	}
-    @objid ("b39ec76f-4022-4113-b29f-6e5ccc978144")
-    
-    abstract String getType();
 
 }

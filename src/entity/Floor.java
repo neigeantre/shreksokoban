@@ -6,8 +6,14 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 public class Floor extends Square {
     public Floor(Warehouse warehouse, Position position) {
 		super(warehouse, position);
+		isGoal=false;
 		// TODO Auto-generated constructor stub
 	}
+    
+    public Floor(Warehouse warehouse, Position position, boolean isGoal) {
+    	super(warehouse, position);
+    	this.isGoal = isGoal;
+    }
 
 	@objid ("409de5df-f2ef-46b1-8d09-978b8640100d")
     private boolean isGoal;
@@ -16,14 +22,24 @@ public class Floor extends Square {
     private Moveable moveable;
     
     @Override
-    public String getType() {
+    public String getView() {
     	if (isGoal) {
-    		return "Goal";
+    		if (moveable == null) {
+    			return ".";
+    		} else if (moveable.getClass() == Player.class) {
+    			return "+";
+    		} else {
+    			return "*";
+    		}
+    	} else {
+    		if (moveable == null) {
+    			return " ";
+    		} else if (moveable.getClass() == Player.class) {
+    			return "@";
+    		} else {
+    			return "$";
+    		}
     	}
-    	else if (moveable==null) {
-    		return " ";
-    	}
-    	return moveable.getType();
     }
     
     boolean checkIfGoal() {
@@ -65,5 +81,13 @@ public class Floor extends Square {
     
     public Square getNeighbour(Direction direction) {
     	return this.warehouse.getNeighbour(this, direction);
+    }
+    
+    // return true if it is not a goal or if it is a goal occupied by a stone
+    public boolean isValid() {
+    	if (isGoal) {
+    		return moveable != null && moveable.getClass() == Stone.class;
+    	}
+    	return true;
     }
 }
