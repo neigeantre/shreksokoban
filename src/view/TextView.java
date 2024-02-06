@@ -78,6 +78,8 @@ public class TextView {
 			TextView.showBoard();
 			String move = myScanner.nextLine();
 			
+			control.translateAction(move);
+			
 		}
 	}
 	
