@@ -3,21 +3,22 @@ package view;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 import control.Controller;
 
 public class TextView {
 	
-	private Controller control;
-	private ArrayList<ArrayList<String>> board;
-	private int BOARD_HEIGHT = 10;
-	private int BOARD_WIDTH = 10;
+	private static Controller control;
+	private static ArrayList<ArrayList<String>> board;
+	private static int BOARD_HEIGHT = 10;
+	private static int BOARD_WIDTH = 10;
 	
 	public TextView() {
 		this.control = control;
 	}
 	
-	public void showBoard() {
+	public static void showBoard() {
 		
 		/*
 		 Légende :
@@ -32,15 +33,7 @@ public class TextView {
 		
 		// initialise board
 		
-		board = new ArrayList<>();
-		for (int i =0; i< BOARD_HEIGHT; i++) {
-			board.add(new ArrayList<String>(BOARD_WIDTH));
-		}
-		
-		control.getBoard().forEach(
-				(key, value)
-					-> board.add(key.column,value));
-		
+		board = control.getBoard();	
 		//
 		for (int i=0;i<BOARD_HEIGHT; i++) {
 			for (int j=0;j < BOARD_WIDTH; j++) {
@@ -60,8 +53,8 @@ public class TextView {
 					case "Goal":
 						System.out.println(".");
 						break;
-						
-				
+				default:
+					break;
 
 				}
 				
@@ -74,6 +67,19 @@ public class TextView {
 	    System.out.print("\033[H\033[2J");  
 	    System.out.flush();  
 	}  
+	
+	public static void main(String[] args) {
+		boolean gameon = true;
+		
+		Scanner myScanner = new Scanner(System.in);
+		
+		while (gameon) {
+			System.out.println("First move");
+			TextView.showBoard();
+			String move = myScanner.nextLine();
+			
+		}
+	}
 	
 
 }
