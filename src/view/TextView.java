@@ -39,19 +39,19 @@ public class TextView {
 			for (int j=0;j < BOARD_WIDTH; j++) {
 				switch (board.get(i).get(j)) {
 					case null:
-						System.out.println(" ");
+						System.out.print(" ");
 						break;
 					case "Wall":
-						System.out.println("#");
+						System.out.print("#");
 						break;
 					case "Player":
-						System.out.println("@");
+						System.out.print("@");
 						break;
 					case "Stone":
-						System.out.println("$");
+						System.out.print("$");
 						break;
 					case "Goal":
-						System.out.println(".");
+						System.out.print(".");
 						break;
 				default:
 					break;
