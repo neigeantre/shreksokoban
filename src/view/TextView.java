@@ -4,15 +4,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import entity.GenerateTest;
 
 import control.Controller;
 
 public class TextView {
 	
-	private static Controller control = new Controller();
+	private static Controller control;
 	private static ArrayList<ArrayList<String>> board;
-	private static int BOARD_HEIGHT = 10;
-	private static int BOARD_WIDTH = 10;
+	private static int BOARD_HEIGHT = 3;
+	private static int BOARD_WIDTH = 5;
 	
 
 	
@@ -49,13 +50,13 @@ public class TextView {
 						System.out.print(".");
 						break;
 				default:
-					System.out.println(" ");
+					System.out.print(" ");
 					break;
 
 				}
 				
 			}
-			System.out.println("\n");
+			System.out.print("\n");
 		}
 		
 	}
@@ -67,16 +68,23 @@ public class TextView {
 	public static void main(String[] args) {
 		boolean gameon = true;
 		
+		GenerateTest.generate();
+		control = GenerateTest.generateController();
+		System.out.println(control.getPos(2, 2));
+		System.out.println(control.getBoard());
+		
 		Scanner myScanner = new Scanner(System.in);
 		
 		while (gameon) {
 			System.out.println("First move");
 			TextView.showBoard();
 			String move = myScanner.nextLine();
-			
+				
 			control.translateAction(move);
 			
 		}
+		
+		myScanner.close();
 	}
 	
 

@@ -21,7 +21,7 @@ public class Floor extends Square {
     		return "Goal";
     	}
     	else if (moveable==null) {
-    		return null;
+    		return " ";
     	}
     	return moveable.getType();
     }

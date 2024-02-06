@@ -8,7 +8,7 @@ import entity.Direction;
 import entity.Player;
 import entity.Warehouse;
 import entity.Position;
-import entity.Square; 
+import entity.Square;
 
 @objid ("6e8b20f4-934d-4b34-bcde-16593a99e9b9")
 public class Controller {
@@ -30,8 +30,7 @@ public class Controller {
     
     public Position getPos(int i, int j) {
     	ArrayList<Position> positions = warehouse.getPositions();
-		for (int k =0; k < positions.size();k++) {
-			Position pos = positions.get(k);
+		for (Position pos: positions) {
 			if (pos.getRow()==i && pos.getColumn()==j) {
 				return pos;
 			}
@@ -42,8 +41,8 @@ public class Controller {
     
     public ArrayList<ArrayList<String>> getBoard() {
     	
-    	int BOARD_HEIGHT = 10;
-    	int BOARD_WIDTH = 10;
+    	int BOARD_HEIGHT = 3;
+    	int BOARD_WIDTH = 5;
     	
     	ArrayList<ArrayList<String>> board = new ArrayList<>();
 		for (int i =0; i< BOARD_HEIGHT; i++) {
@@ -61,7 +60,7 @@ public class Controller {
     	return board;
     }
     
-    public Direction translateAction(String useraction) {
+    public void translateAction(String useraction) {
     	switch(useraction){
 		case "U":
 			action(Direction.UP);

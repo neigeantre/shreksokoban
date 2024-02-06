@@ -52,4 +52,8 @@ public class Position {
 	public String toString() {
 		return "(" + row + ", " + column + ")";
 	}
+
+	public void setSquare(Square square) {
+		this.square = square;
+	}
 }

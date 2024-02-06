@@ -56,4 +56,8 @@ public class Warehouse {
     public ArrayList<Position> getPositions(){
     	return this.positions;
     }
+
+	public void setSquares(ArrayList<Square> squares) {
+		this.squares = squares;
+	}
 }

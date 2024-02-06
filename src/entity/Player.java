@@ -15,7 +15,9 @@ public class Player extends Moveable {
     	if (this.floor.isNeighbourFree(direction)) {
     		Square neighbour = this.floor.getNeighbour(direction);
     		assert (neighbour.getClass() == Floor.class);
+    		this.floor.setMoveable(null);
     		this.floor = (Floor) neighbour;
+    		this.floor.setMoveable(this);
     	}
     	
     }
