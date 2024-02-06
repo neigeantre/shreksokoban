@@ -1,6 +1,5 @@
 package control;
 
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 import java.util.ArrayList;
 import java.util.HashMap; 
@@ -10,12 +9,9 @@ import entity.Warehouse;
 import entity.Position;
 import entity.Square;
 
-@objid ("6e8b20f4-934d-4b34-bcde-16593a99e9b9")
 public class Controller {
-    @objid ("a314485c-751b-4288-9577-e7cb1db4de80")
     private Warehouse warehouse;
 
-    @objid ("0d8b8391-47b4-426c-a8d8-2d8af07dd71a")
     private Player player;
         
     public Controller(Player player, Warehouse warehouse) {
@@ -23,7 +19,6 @@ public class Controller {
     	this.warehouse = warehouse;
     }
 
-    @objid ("d194fe2c-4505-48ec-81c3-3dfe828c0116")
     public void action(final Direction direction) {
     	this.player.move(direction);
     }
