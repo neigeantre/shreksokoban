@@ -9,14 +9,12 @@ import control.Controller;
 
 public class TextView {
 	
-	private static Controller control;
+	private static Controller control = new Controller();
 	private static ArrayList<ArrayList<String>> board;
 	private static int BOARD_HEIGHT = 10;
 	private static int BOARD_WIDTH = 10;
 	
-	public TextView() {
-		this.control = control;
-	}
+
 	
 	public static void showBoard() {
 		
@@ -38,9 +36,6 @@ public class TextView {
 		for (int i=0;i<BOARD_HEIGHT; i++) {
 			for (int j=0;j < BOARD_WIDTH; j++) {
 				switch (board.get(i).get(j)) {
-					case null:
-						System.out.print(" ");
-						break;
 					case "Wall":
 						System.out.print("#");
 						break;
@@ -54,6 +49,7 @@ public class TextView {
 						System.out.print(".");
 						break;
 				default:
+					System.out.println(" ");
 					break;
 
 				}
