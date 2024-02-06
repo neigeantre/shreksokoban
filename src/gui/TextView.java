@@ -1,4 +1,4 @@
-package view;
+package gui;
 
 import java.util.ArrayList;
 import java.util.HashMap;
